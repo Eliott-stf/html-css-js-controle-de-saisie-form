@@ -1,0 +1,69 @@
+:root {
+    color: white;
+}
+
+* {
+    border: 0;
+    box-sizing: border-box;
+    margin: 0;
+    outline: 0;
+    padding: 0;
+    font-weight: bold;
+}
+
+body {
+    background-color: #121212;
+    font-family: sans-serif;
+}
+
+button {
+    background-color: transparent;
+    font-size: inherit;
+}
+
+main{
+    padding: 20px;
+}
+
+.btn{
+    display: inline-block;
+    border-radius: 2px;
+    background-color: #00bbcc;
+    cursor: pointer;
+    padding: 10px 15px;
+    transition: background .3s ease;
+}
+.btn:is(:active, :hover){
+    background-color: hsla(185, 100%, 40%, 0.753);
+}
+
+.from-section{
+    margin-bottom: 15px;
+}
+
+/* Tous les <input> et <label> enfants directs d'un <element class="section" */
+.from-section > :is(input,label){
+    display: block;
+}
+
+.from-section label{
+    font-weight: 700;
+}
+
+.from-section.error label {
+    color: #c00;
+}
+/* Tous les <input> qui ne sont pas des <element type="checkbox">, enfants directs d'un <element class="section" */
+.from-section > input:not([type="checkbox"]){
+    border: 1px solid #aaa;
+    border-radius: 2px;
+    padding: 10px 15px;
+}
+
+/* Tous les <input> qui ne sont pas des <element type="checkbox">, enfants directs d'un <element class="section.error" */
+.from-section.error > input:not([type="checkbox"]){
+    background-color: #f99;
+    border: 2px solid #f00;
+    color: #c00;
+    padding: 9px 14px;
+}
